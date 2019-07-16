@@ -1,18 +1,46 @@
+<!DOCTYPE html>
 <html>
     <head>
-        <title>MOHAMMED THASIN</title>
-        <meta content="width=device-width, initial-scale=1" name="viewport">
-        <link href="css/main.css" rel="stylesheet">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Personal Expense</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" media="screen" href=>
+        <style>
+            body {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                }
+        </style>
     </head>
-    <body>
-        <header class="site-header">
-             <img class="profile-pic"src="https://pbs.twimg.com/profile_images/604265047410483200/xcVltjS6_400x400.jpg">
-            <div class="site-header-content">
-                <h1>Hi my name is mohammed thasin,I am from bangalore.And i am 18 years old</h1>
-                <h3>I am learning full stack web development..</h3>
-                <h5>Watch out for more upcoming projects<a class=
-                    "course-link" href="https://www.jaguar.in/index.html"> click here.</a></h5>
-            </div>
-        </header>
-    </body>
+<body>
+    <h1 id="headingTotal"></h1>
+    <input id="inputAmount" type="text"></input>
+    <button id="btnAddExpense">+</button>
+<script>
+    const headingEl = document.querySelector("#headingTotal");
+       let totalExpense = 0;
+       headingEl.textContent = totalExpense;
+       function addExpenseToTotal() {
+           const inputElement = document.querySelector("#inputAmount");
+           const textAmount = inputElement.value;
+          
+           
+           const expense = parseInt(textAmount, 10);
+           
+
+           totalExpense = totalExpense + expense;
+           
+           headingEl.textContent = totalExpense;
+        }
+        
+        const element = document.querySelector("#btnAddExpense");
+        
+        element.addEventListener("click", addExpenseToTotal, false); 
+        
+</script>           
+</body>
 </html>
